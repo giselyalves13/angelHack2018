@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fila Mentorandos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mentorando</th>
+      <th>Habilidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fila_mentorandos.each do |fila_mentorando| %>
+      <tr>
+        <td><%= fila_mentorando.mentorando_id %></td>
+        <td><%= fila_mentorando.habilidade %></td>
+        <td><%= link_to 'Show', fila_mentorando %></td>
+        <td><%= link_to 'Edit', edit_fila_mentorando_path(fila_mentorando) %></td>
+        <td><%= link_to 'Destroy', fila_mentorando, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fila Mentorando', new_fila_mentorando_path %>

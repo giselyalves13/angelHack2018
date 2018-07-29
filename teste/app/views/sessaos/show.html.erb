@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mentor:</strong>
+  <%= @sessao.mentor_id %>
+</p>
+
+<p>
+  <strong>Mentorado:</strong>
+  <%= @sessao.mentorado_id %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @sessao.horario %>
+</p>
+
+<p>
+  <strong>Habilidade:</strong>
+  <%= @sessao.habilidade %>
+</p>
+
+<%= link_to 'Edit', edit_sessao_path(@sessao) %> |
+<%= link_to 'Back', sessaos_path %>

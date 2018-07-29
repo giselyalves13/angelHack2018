@@ -1,0 +1,27 @@
+<%= form_with(model: fila_mentorando, local: true) do |form| %>
+  <% if fila_mentorando.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fila_mentorando.errors.count, "error") %> prohibited this fila_mentorando from being saved:</h2>
+
+      <ul>
+      <% fila_mentorando.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mentorando_id %>
+    <%= form.number_field :mentorando_id, id: :fila_mentorando_mentorando_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :habilidade %>
+    <%= form.text_field :habilidade, id: :fila_mentorando_habilidade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

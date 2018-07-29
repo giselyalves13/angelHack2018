@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180729041020) do
+ActiveRecord::Schema.define(version: 20180729051425) do
+
+  create_table "disponibilidade_mentorandos", force: :cascade do |t|
+    t.string "dia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "fila_mentorandos_id"
+    t.index ["fila_mentorandos_id"], name: "index_disponibilidade_mentorandos_on_fila_mentorandos_id"
+  end
+
+  create_table "disponibilidade_mentors", force: :cascade do |t|
+    t.string "dia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "fila_mentors_id"
+    t.index ["fila_mentors_id"], name: "index_disponibilidade_mentors_on_fila_mentors_id"
+  end
+
+  create_table "fila_mentorandos", force: :cascade do |t|
+    t.integer "mentorando_id"
+    t.string "habilidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fila_mentors", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.string "habilidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "habilidades", force: :cascade do |t|
     t.string "habilidade"
@@ -26,6 +56,20 @@ ActiveRecord::Schema.define(version: 20180729041020) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_linguas_on_user_id"
+  end
+
+  create_table "sessaos", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.integer "mentorado_id"
+    t.datetime "horario"
+    t.string "habilidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_mentor", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "user_mentor_id", null: false
   end
 
   create_table "users", force: :cascade do |t|

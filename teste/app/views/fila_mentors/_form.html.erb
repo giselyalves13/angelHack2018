@@ -1,0 +1,27 @@
+<%= form_with(model: fila_mentor, local: true) do |form| %>
+  <% if fila_mentor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fila_mentor.errors.count, "error") %> prohibited this fila_mentor from being saved:</h2>
+
+      <ul>
+      <% fila_mentor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mentor_id %>
+    <%= form.number_field :mentor_id, id: :fila_mentor_mentor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :habilidade %>
+    <%= form.text_field :habilidade, id: :fila_mentor_habilidade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

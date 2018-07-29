@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mentor:</strong>
+  <%= @fila_mentor.mentor_id %>
+</p>
+
+<p>
+  <strong>Habilidade:</strong>
+  <%= @fila_mentor.habilidade %>
+</p>
+
+<%= link_to 'Edit', edit_fila_mentor_path(@fila_mentor) %> |
+<%= link_to 'Back', fila_mentors_path %>

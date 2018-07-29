@@ -1,0 +1,37 @@
+<%= form_with(model: sessao, local: true) do |form| %>
+  <% if sessao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sessao.errors.count, "error") %> prohibited this sessao from being saved:</h2>
+
+      <ul>
+      <% sessao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mentor_id %>
+    <%= form.number_field :mentor_id, id: :sessao_mentor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mentorado_id %>
+    <%= form.number_field :mentorado_id, id: :sessao_mentorado_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario %>
+    <%= form.datetime_select :horario, id: :sessao_horario %>
+  </div>
+
+  <div class="field">
+    <%= form.label :habilidade %>
+    <%= form.text_field :habilidade, id: :sessao_habilidade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
