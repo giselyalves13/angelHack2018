@@ -1,0 +1,12 @@
+.mentores{
+	display: flex;
+}
+.card{
+	margin: 1%;
+}
+.card-title{
+	color: #212529;
+}
+.card-body{
+	color: #212529;
+}
