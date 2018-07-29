@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180729051425) do
+ActiveRecord::Schema.define(version: 20180729065515) do
 
   create_table "disponibilidade_mentorandos", force: :cascade do |t|
     t.string "dia"
@@ -74,11 +74,11 @@ ActiveRecord::Schema.define(version: 20180729051425) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "senha"
     t.string "nome"
     t.string "genero"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mentores</h1>
+
+<table>
+  <thead>
+    
+  </thead>
+
+  <tbody>
+    <% @fila_mentors.each do |mentor| %>
+      <tr>
+        <td><%= User.find_by(id: mentor.mentor_id).nome %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

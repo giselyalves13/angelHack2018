@@ -1,0 +1,5 @@
+class AddRemoveSenha < ActiveRecord::Migration[5.1]
+  def change
+  	  	remove_column :users, :senha
+  end
+end

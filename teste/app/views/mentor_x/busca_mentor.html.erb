@@ -1,0 +1,22 @@
+
+
+
+<section>
+<form>
+  <div class="form-group">
+    <%= form_tag(mentores_buscados_index_path, method: :post) do |f| %>
+    <label for="exampleFormControlSelect2">Características Desejadas no Mentor</label><br>
+     <%= label_tag("Área de atuação") %>
+     <%= text_field_tag( :habilidade) %>
+    <%= label_tag ("Disponibilidade ")%>
+    <%= text_field_tag (:dia )%>
+    <%= submit_tag%>
+  <% end %>
+
+</form>
+</section>
+        
+
+
+
+ -->

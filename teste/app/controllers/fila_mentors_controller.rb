@@ -1,5 +1,6 @@
 class FilaMentorsController < ApplicationController
   before_action :set_fila_mentor, only: [:show, :edit, :update, :destroy]
+    # before_filter :authorize
 
   # GET /fila_mentors
   # GET /fila_mentors.json
@@ -12,7 +13,7 @@ class FilaMentorsController < ApplicationController
   def show
   end
 
-  # GET /fila_mentors/new
+  # GET /fila_mentors_url/new
   def new
     @fila_mentor = FilaMentor.new
   end

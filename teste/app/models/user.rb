@@ -13,4 +13,11 @@ class User < ApplicationRecord
     :join_table => "user_mentor",
     :foreign_key => "user_mento_id",
     :association_foreign_key => "user_id")
+
+    has_secure_password
+    validates :email, presence: true, length: {maximum: 50}, uniqueness: {case_sensitive: false}
+    validates :password_digest, confirmation: true, presence: true, length: {minimum: 4}
+    validates :password_confirmation, presence: true 
+    before_save { self.email = email.downcase }
+
 end

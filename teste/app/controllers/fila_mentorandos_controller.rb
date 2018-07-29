@@ -35,6 +35,8 @@ class FilaMentorandosController < ApplicationController
         format.json { render json: @fila_mentorando.errors, status: :unprocessable_entity }
       end
     end
+
+    # -----> Buscar mentores na fila satisfazendo por habilidade, horario, timestamp
   end
 
   # PATCH/PUT /fila_mentorandos/1

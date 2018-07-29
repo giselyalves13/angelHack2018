@@ -20,6 +20,10 @@
     <%= form.label :habilidade %>
     <%= form.text_field :habilidade, id: :fila_mentor_habilidade %>
   </div>
+    <div class="field">
+    <%= form.label "disponibilidade" %>
+    <%= form.text_field fila_mentor.dia %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

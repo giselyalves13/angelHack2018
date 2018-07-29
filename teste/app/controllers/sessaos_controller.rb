@@ -1,5 +1,6 @@
 class SessaosController < ApplicationController
   before_action :set_sessao, only: [:show, :edit, :update, :destroy]
+    before_filter :authorize
 
   # GET /sessaos
   # GET /sessaos.json
